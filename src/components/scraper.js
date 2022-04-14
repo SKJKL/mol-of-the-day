@@ -11,22 +11,46 @@ const fs = require("fs");
 let url = "http://127.0.0.1:5500/mol-of-the-day/src/components/web-scraped.html?archive=All";
 let look = "div#bd script";
 
-//use async await
-const getMols = async () => {
+var getMols = async () => {
 	try {
 		let soup = await axios.get(url);
 		console.log("Start");
 		let html = soup.data;
 		// fs.writeFile("web-scraped.html", html, () => {console.log("Written!")});
 		let $ = cheerio.load(html);
+		let code = "";
 		$(look).map((index, element) => {
-			console.log($(element).html().trim());
+			code = $(element).html().trim();
 		});
+		let trimmed = /\[.+\]/.exec(code);
+		//console.log(trimmed);
+		//fs.writeFile("trimmed.json", trimmed[0], () => {});
+		let mols = JSON.parse(trimmed[0]);
 		console.log("Whoop!");
+		
+		return mols;
 
 	} catch (error) {
 		console.error(error);
 		console.log("Awww");
 	}
 }
-getMols();
+
+let molArray = [];
+
+const makeMolArray = async () => {
+	let molObjs = await getMols();
+	//console.log(molObjs);
+	
+	for (let i = 0; i < 5; i++) {
+		let molobj = molObjs[i];
+		molArray.push(molobj.title);
+	}
+	console.log(molArray);
+
+}
+
+makeMolArray();
+
+//let trimmed = /(?<=\[){*}/.test(getMols());
+//console.log(trimmed);
