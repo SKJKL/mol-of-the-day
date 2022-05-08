@@ -1,13 +1,9 @@
-import Header from "./components/Header";
-//import scraper from "./components/scraper";
+import Body from "./components/Body.js";
 
 function App() {
-	console.log(1+1);
-	//console.log(scraper());
-
 	return (
 		<div className="container">
-			<Header />
+			<Body />
 		</div>
 	);
 }
