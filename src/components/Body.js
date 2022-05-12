@@ -3,6 +3,8 @@ import getLink from "./getLink.js";
 // import scrapePage from "./scraper.js"
 import {useEffect,useState} from "react";
 
+//  "proxy": "https://www.acs.org",
+
 const Body = () => {
 	const [text, setText] = useState([]);
 	

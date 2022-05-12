@@ -14,4 +14,7 @@ const getPage = async (link) => {
 	return [title,text];
 }
 
+
+
+
 export default getPage;
