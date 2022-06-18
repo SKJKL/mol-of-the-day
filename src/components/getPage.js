@@ -15,6 +15,11 @@ const getPage = async (link) => {
 }
 
 
+// const a = async () => {
+// 	let b = await getPage("https://www.acs.org/content/acs/en/molecule-of-the-week/archive/a/azulene.html");
+// 	console.log(b);
+// }
 
+// a();
 
 export default getPage;

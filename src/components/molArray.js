@@ -2,7 +2,7 @@ import scrapePage from "./scraper.js";
 import pickCSS from "./pickCSS.js";
 // import * as fs from "fs";
 
-const url = "/content/acs/en/molecule-of-the-week/archive.html?archive=All#";
+const url = "https://www.acs.org/content/acs/en/molecule-of-the-week/archive.html?archive=All#";
 const look = "div#bd script";
 
 const getMols = async (address,css) => {

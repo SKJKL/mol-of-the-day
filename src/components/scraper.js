@@ -15,4 +15,5 @@ const scrapePage = async (address) => {
 	}
 }
 
+
 export default scrapePage;
