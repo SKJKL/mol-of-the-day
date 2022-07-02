@@ -5,6 +5,8 @@ const pickCSS = (html, css) => {
 	let text = "";
 	$(css).map((index, element) => {
 		text = $(element).html().trim();
+		return true;
+		// For "expected return" warning
 	});
 	
 	return text;

@@ -12,7 +12,43 @@ code {
     monospace;
 }
 
+#grid-div {
+	display: grid;
+	grid-template-columns: 60% 40%;
+	/* grid-template-rows: min-content auto; */
+	gap: 10px;
+  background-color: #ccc;
+  padding: 10px;
+}
+
+.textbox {
+	background-color: rgba(255, 255, 255, 0.8);
+	padding: 5px 20px;
+}
+
+#grid-head {
+	grid-area: 1 / 1 / 2 / 2;
+	border-bottom: #444 5px solid;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#grid-text {
+	grid-area: 2 / 1 / 3 / 2;
+	border-bottom: #444 5px solid;
+}
+
+#grid-image {
+	grid-area: 1 / 2 / 3 / 3;
+	border: #444 5px solid;
+	box-shadow: 7px 7px #333;
+	background-color: white;
+	text-align: center;
+	padding: 0;
+}
+
 #structure {
-	height: 25%;
-	width: 25%;
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
 }
